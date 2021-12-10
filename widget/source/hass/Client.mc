@@ -3,7 +3,6 @@ using Toybox.Application as App;
 using Toybox.StringUtil;
 using Hass;
 
-(:glance)
 module Hass {
     const AUTH_ENDPOINT = "/auth/authorize";
     const TOKEN_ENDPOINT = "/auth/token";
@@ -21,6 +20,7 @@ module Hass {
         hidden var _baseUrl;
         hidden var _baseUrlIsValid;
 
+        (:glance)
         function initialize() {
             refreshBaseUrl();
 
@@ -32,6 +32,7 @@ module Hass {
             });
         }
 
+        (:glance)
         function refreshBaseUrl() {
             var newUrl = App.Properties.getValue("host");
             var chars = newUrl.toCharArray();
@@ -83,7 +84,6 @@ module Hass {
             return error;
         }
 
-
         function activateScene(sceneId, callback) {
             if (validateSettings(callback) != null) {
                 return;
@@ -99,6 +99,33 @@ module Hass {
                 {
                     :method => Comm.HTTP_REQUEST_METHOD_POST
                 },
+                callback
+            );
+        }
+
+        (:glance)
+        function getTemplate(template, context, options, callback) {
+            if (validateSettings(callback) != null) {
+                return;
+            }
+
+            if (context == null) {
+                context = {};
+            }
+
+            if (options == null) {
+                options = {};
+            }
+
+            options[:method] = Comm.HTTP_REQUEST_METHOD_POST;
+            options[:context] = context;
+
+            makeAuthenticatedWebRequest(
+                _baseUrl + "/api/template",
+                {
+                    "template" => template
+                },
+                options,
                 callback
             );
         }

@@ -3,8 +3,8 @@ using Toybox.Application as App;
 using Toybox.StringUtil;
 using Toybox.Time;
 
-(:glance)
 module Hass {
+    (:glance)
     class OauthCredentials {
         hidden var _refreshToken;
         hidden var _accessToken;

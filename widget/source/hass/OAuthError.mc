@@ -1,6 +1,5 @@
 using Toybox.WatchUi as Ui;
 
-(:glance)
 module Hass {
     class OAuthError extends RequestError {
         var code;

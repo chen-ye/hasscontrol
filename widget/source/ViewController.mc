@@ -123,7 +123,7 @@ class ViewController {
     }
 
   }
- 
+
   function showLoader(text) {
     if (isShowingLoader()) {
       Ui.popView(Ui.SLIDE_IMMEDIATE);

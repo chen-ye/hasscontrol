@@ -12,10 +12,12 @@ module Hass {
   var _entitiesToRefresh = new [0];
   var _continueRefreshOnError = false;
 
+  (:glance)
   function initClient() {
     client = new Client();
   }
 
+  (:glance)
   function getGroup() {
     var group = App.Properties.getValue("group");
 
@@ -123,8 +125,6 @@ module Hass {
     for (var i = 0; i < entities.size(); i++) {
       _entities.add(Entity.createFromDict(entities[i]));
     }
-
-    loadScenesFromSettings();
 
     System.println("Loaded entities: " + _entities);
   }
@@ -297,7 +297,7 @@ module Hass {
     var entityType = null;
     var action = null;
     var loadingText = "Loading";
-    
+
     if (entity.getType() == Entity.TYPE_BINARY_SENSOR) {
         // binary_sensor cannot be set, only read
         return;

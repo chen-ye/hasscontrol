@@ -1,8 +1,8 @@
 using Toybox.WatchUi as Ui;
 using Toybox.System;
 
-(:glance)
 module Hass {
+    (:glance)
     class RequestError extends Error {
         var code;
         var message;

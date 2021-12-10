@@ -3,8 +3,8 @@ using Toybox.Application as App;
 using Toybox.StringUtil;
 using Toybox.Time;
 
-(:glance)
 module Hass {
+    (:glance)
     class OAuthClient {
         hidden var _authUrl;
         hidden var _tokenUrl;
@@ -283,6 +283,9 @@ module Hass {
 
             if (passedOptions[:method] != null) {
                 options[:method] = passedOptions[:method];
+            }
+            if (passedOptions[:responseType] != null) {
+                options[:responseType] = passedOptions[:responseType];
             }
 
             if (options[:method] == Comm.HTTP_REQUEST_METHOD_GET) {

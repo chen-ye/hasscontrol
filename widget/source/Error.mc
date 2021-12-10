@@ -1,5 +1,6 @@
 using Toybox.WatchUi as Ui;
 
+(:glance)
 class Error {
     static var ERROR_UNKNOWN = 0;
     static var ERROR_PHONE_NOT_CONNECTED = 1;

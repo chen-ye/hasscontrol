@@ -1,5 +1,4 @@
 
-(:glance)
 module Hass {
     const HASS_STATE_ON = "on";
     const HASS_STATE_OFF = "off";
@@ -9,6 +8,7 @@ module Hass {
     const HASS_STATE_CLOSED = "closed";
     const HASS_STATE_UNKNOWN = "unknown";
 
+    (:glance)
     enum {
         TYPE_SCENE,
         TYPE_LIGHT,
@@ -22,6 +22,7 @@ module Hass {
         TYPE_UNKNOWN
     }
 
+    (:glance)
     enum {
         STATE_ON,
         STATE_OFF,
@@ -32,6 +33,7 @@ module Hass {
         STATE_UNKNOWN
     }
 
+    (:glance)
     enum {
         ERROR_TOKEN_REVOKED,
         ERROR_SERVER_NOT_REACHABLE,

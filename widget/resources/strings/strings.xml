@@ -1,19 +1,16 @@
 <strings>
-    <string id="AppName">HassControl</string>
-
+    <string id="AppName" scope="glance">HassControl</string>
 
     <!-- Entity List -->
     <string id="NoEntities">No entities configured</string>
-
-
 
     <!-- ERROR -->
     <string id="Error_Unknown">Unknown error</string>
     <string id="Error_PhoneNotConnected">Phone not connected</string>
 
-    <string id="Error_Request_InvalidUrl">Check settings, invalid url</string>
-    <string id="Error_Request_NotFound">Resource not found</string>
-    <string id="Error_Request_NotAuthorized">Authentication failed</string>
+    <string id="Error_Request_InvalidUrl" scope="glance">Check settings, invalid url</string>
+    <string id="Error_Request_NotFound" scope="glance">Resource not found</string>
+    <string id="Error_Request_NotAuthorized" scope="glance">Authentication failed</string>
 
     <string id="Error_Auth_NotReachable">Server not reachable</string>
     <string id="Error_Auth_Revoked">Login Revoked</string>

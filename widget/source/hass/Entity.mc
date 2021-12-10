@@ -1,4 +1,6 @@
 
+using Toybox.Lang;
+
 module Hass {
   class Entity {
     static function createFromDict(dict) {
@@ -130,7 +132,7 @@ module Hass {
         && newState != STATE_OPEN
         && newState != STATE_UNKNOWN
       ) {
-        throw new InvalidValueException("state must be a valid Entity state");
+        throw new Lang.InvalidValueException("state must be a valid Entity state");
       }
 
       _mState = newState;
@@ -138,6 +140,13 @@ module Hass {
 
     function getState() {
       return _mState;
+    }
+
+    function getActive() {
+      return
+        _mState == STATE_ON ||
+        _mState == STATE_UNLOCKED ||
+        _mState == STATE_OPEN;
     }
 
     function isExternal() {

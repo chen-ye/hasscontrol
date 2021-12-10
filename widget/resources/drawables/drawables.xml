@@ -3,7 +3,7 @@
         <bitmap id="LauncherIcon" filename="launcher_icon.png" />
         <bitmap id="Scene" filename="scene.png" />
         <bitmap id="LightOff" filename="light_off.png" />
-        <bitmap id="LightOn" filename="light_on.png" />
+        <bitmap id="LightOn" filename="light_on.png"/>
         <bitmap id="SwitchOn" filename="switch_on.png" />
         <bitmap id="SwitchOff" filename="switch_off.png" />
         <bitmap id="CheckboxOn" filename="checkbox_on.png" />
@@ -19,5 +19,10 @@
         <bitmap id="ScriptOff" filename="script_off.png" />
         <bitmap id="Unknown" filename="unknown.png" />
         <bitmap id="SmileySad" filename="smiley_sad.png" />
+        <bitmap id="DomainLight" filename="domain_light.png" scope="glance">
+            <palette>
+                <color>ffffaa</color>
+            </palette>
+        </bitmap>
     </drawables>
 </resources>

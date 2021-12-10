@@ -1,8 +1,8 @@
 using Toybox.Application as App;
 using Toybox.Communications as Comm;
 using Toybox.WatchUi as Ui;
+using Toybox.Lang;
 using Hass;
-
 
 class HassControlApp extends App.AppBase {
   static const SCENES_VIEW = "scenes";
@@ -12,6 +12,7 @@ class HassControlApp extends App.AppBase {
   var viewController;
   var menu;
 
+  (:glance)
   function initialize() {
     AppBase.initialize();
   }
@@ -89,7 +90,7 @@ class HassControlApp extends App.AppBase {
         HassControlApp.SCENES_VIEW
       );
     } else {
-      throw new InvalidValueException();
+      throw new Lang.InvalidValueException();
     }
   }
 
@@ -100,12 +101,6 @@ class HassControlApp extends App.AppBase {
   function onStart(state) {}
 
   function onStop(state) {}
-
-  function getGlanceView() {
-    return [
-      new AppGlance()
-    ];
-  }
 
   // Return the initial view of your application here
   function getInitialView() {
@@ -146,10 +141,22 @@ class HassControlApp extends App.AppBase {
       delegate = new BaseDelegate();
     }
 
-
     return [
       view,
       delegate
+    ];
+  }
+
+  (:glance)
+  function getGlanceView() {
+    var glanceController = new GlanceController();
+
+    Hass.initClient();
+
+    glanceController.refreshSummaries();
+
+    return [
+      new AppGlance(glanceController)
     ];
   }
 }

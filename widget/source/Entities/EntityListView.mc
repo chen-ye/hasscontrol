@@ -1,6 +1,7 @@
 using Toybox.Application as App;
 using Toybox.WatchUi as Ui;
 using Toybox.Timer;
+using Toybox.Lang;
 using Hass;
 
 class EntityListController {
@@ -40,7 +41,7 @@ class EntityListController {
 
   function setIndex(index) {
     if (!(index instanceof Number)) {
-      throw new InvalidValueException();
+      throw new Lang.InvalidValueException();
     }
     _mIndex = index;
   }
